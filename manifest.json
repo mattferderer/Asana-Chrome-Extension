@@ -1,0 +1,32 @@
+{
+    "name": "AsanaPlus",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Improves Asana by better highlighting tasks with sub tasks. TODO: Add browser notifications.",
+    "homepage_url": "https://mattferderer.com",
+    "background": {
+        "scripts": [
+            "listen.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_title": "AsanaPlus",
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://app.asana.com/*"
+            ],
+            "js": [
+                "inject.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "https://app.asana.com/*",
+        "notifications"
+    ]
+}
